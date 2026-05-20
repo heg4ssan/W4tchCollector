@@ -1,7 +1,6 @@
 # W4tchCollector
 ## Contexto y funcionalidad
-Este proyecto está hecho para todo aquel coleccionista y amante de los relojes. La idea es poder tener un programa donde puedas guardar todos tus relojes en una colección con sus respectivos datos, como su tipo (ya sea automático/mecánico, digital o de cuarzo), así como su modelo y otros datos más específicos. También puedes consultar cosas claves de tu colección, como su valoración total de precio, consultar cada reloj y sus datos individuales, el tamaño de tu colección, etc. 
-
+Este proyecto está hecho para todo aquel coleccionista y amante de los relojes. La idea es poder tener un programa donde puedas guardar todos tus relojes en una colección con sus respectivos datos, como su tipo (ya sea automático/mecánico, digital o de cuarzo), así como su modelo y otros datos más específicos. También puedes consultar cosas claves de tu colección, como su valoración total de precio, consultar cada reloj y sus datos individuales, el tamaño de tu colección, etc. Y en esto se basa la funcionalidad, en tener una colección de relojes donde puedas consultar individualmente los datos de cada uno, ver la colección completa, conocer el número de relojes que tienes y las otras características que mencioné anteriormente.
 ## Consideraciones
 El programa solo corre en la consola y esta hecho con c++ standard por lo que corre en todos los sistemas operativos
 
