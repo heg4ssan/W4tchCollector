@@ -76,10 +76,12 @@ string Automatico ::getMovimiento() { return movimiento; }
 void Automatico ::setMovimiento(string m) { movimiento = m; }
 
 void Automatico ::imprimeCaracteristicas() {
- Reloj::imprimeCaracteristicas(); // Aqui llamo imprime caracteristicas de reloj para
-                            // imprimir los atributos del reloj estandar y
-                            // reutilizar el codigo.
-  cout << "Movimiento: " << movimiento << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Modelo: " << modelo << endl;
+    cout << "Tipo de cristal: " << cristal << endl;
+    cout << "Precio: " << precio << endl;
+    cout << "Año: " << year << endl;
+    cout << "Movimiento: " << movimiento << endl;
 }
 
 class Cuarzo : public Reloj {
@@ -101,10 +103,12 @@ int Cuarzo ::getFrecuencia() { return frecuenciaCuarzo; }
 void Cuarzo ::setFreciencia(int fc) { frecuenciaCuarzo = fc; }
 
 void Cuarzo ::imprimeCaracteristicas() {
- Reloj::imprimeCaracteristicas(); // Aqui llamo imprime caracteristicas de reloj para
-                            // imprimir los atributos del reloj estandar y
-                            // reutilizar el codigo.
-  cout << "Frecuencia del cuarzo: " << frecuenciaCuarzo << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Modelo: " << modelo << endl;
+    cout << "Tipo de cristal: " << cristal << endl;
+    cout << "Precio: " << precio << endl;
+    cout << "Año: " << year << endl;
+    cout << "Frecuencia del cuarzo: " << frecuenciaCuarzo << endl;
 }
 
 class Digital : public Reloj {
@@ -126,8 +130,10 @@ string Digital ::getDisplay() { return display; }
 void Digital ::setDisplay(string di) { display = di; }
 
 void Digital ::imprimeCaracteristicas() {
- Reloj::imprimeCaracteristicas(); // Aqui llamo imprime caracteristicas de reloj para
-                            // imprimir los atributos del reloj estandar y
-                            // reutilizar el codigo.
-  cout << "Tipo de display: " << display << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Modelo: " << modelo << endl;
+    cout << "Tipo de cristal: " << cristal << endl;
+    cout << "Precio: " << precio << endl;
+    cout << "Año: " << year << endl;
+    cout << "Tipo de display: " << display << endl;
 }
