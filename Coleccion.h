@@ -1,3 +1,7 @@
+#ifndef COLECCION_H_
+#define COLECCION_H_
+
+
 #include "Reloj.h"
 #include <iostream>
 #include <string>
@@ -5,7 +9,7 @@ using namespace std;
 
 class Coleccion {
 private:
-  Reloj relojes[100];
+  Reloj* relojes[100];
   int cont = 0;
 
 public:
@@ -15,32 +19,32 @@ public:
   void agregarDigital(string n, string m, string c, int p, int y, string di);
   int valorColeccion();
   void mostrarColeccion();
-  void cantidadRelojes();
-  void Caracteristicas(int numReloj);
+  int cantidadRelojes();
+  void caracteristicas(int numReloj);
 };
 
 void Coleccion ::agregarAutomatico(string n, string m, string c, int p, int y,
                                    string mo) {
-  relojes[cont] = Automatico(n, m, c, p, y, mo);
+  relojes[cont] = new Automatico(n, m, c, p, y, mo);
   cont++;
 }
 
 void Coleccion ::agregarCuarzo(string n, string m, string c, int p, int y,
                                int fc) {
-  relojes[cont] = Cuarzo(n, m, c, p, y, fc);
+  relojes[cont] = new Cuarzo(n, m, c, p, y, fc);
   cont++;
 }
 
 void Coleccion ::agregarDigital(string n, string m, string c, int p, int y,
                                 string di) {
-  relojes[cont] = Digital(n, m, c, p, y, di);
+  relojes[cont] = new Digital(n, m, c, p, y, di);
   cont++;
 }
 
 int Coleccion ::valorColeccion() {
   int sum = 0;
   for (int i = 0; i < cont; i++) {
-    sum = sum + relojes[i].getPrecio();
+    sum = sum + relojes[i]->getPrecio();
   }
   return sum;
 }
@@ -48,13 +52,15 @@ int Coleccion ::valorColeccion() {
 void Coleccion ::mostrarColeccion() {
   int num = 1;
   for (int i = 0; i < cont; i++) {
-    cout << num << ".- " << relojes[i].getNombre() << endl;
+    cout << num << ".- " << relojes[i]->getNombre() << endl;
     num++;
   }
 }
 
-void Coleccion ::cantidadRelojes() { cout << cont << endl; }
+int Coleccion ::cantidadRelojes() { return cont; }
 
-void Coleccion ::Caracteristicas(int numReloj) {
-  relojes[numReloj - 1].imprimeCaracteristicas();
+void Coleccion ::caracteristicas(int numReloj) {
+  relojes[numReloj - 1]->imprimeCaracteristicas();
 }
+
+#endif
