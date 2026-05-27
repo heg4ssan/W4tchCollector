@@ -15,12 +15,12 @@ Para compilar el programa, instala los .h y el MainPrueba.cpp, debido a que en m
 
 ### Linux
 
-Compilación: `g++ MainPrueba.cpp -o W4C`
+Compilación: `g++ main.cpp -o W4C`
 
 Ejecución: `./W4C`
 
 ### Windows
 
-Compilación: `g++ MainPrueba.cpp -o W4C.exe`
+Compilación: `g++ main.cpp -o W4C.exe`
 
 Ejecución: `.\W4C.exe`
