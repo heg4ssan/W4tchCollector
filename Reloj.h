@@ -1,3 +1,6 @@
+#ifndef RELOJ_H_
+#define RELOJ_H_
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -26,7 +29,7 @@ public:
   void setCristal(string c);
   void setPrecio(int p);
   void setYear(int y);
-  void imprimeCaracteristicas();
+  virtual void imprimeCaracteristicas();
 };
 
 string Reloj ::getNombre() { return nombre; }
@@ -76,11 +79,7 @@ string Automatico ::getMovimiento() { return movimiento; }
 void Automatico ::setMovimiento(string m) { movimiento = m; }
 
 void Automatico ::imprimeCaracteristicas() {
-    cout << "Nombre: " << nombre << endl;
-    cout << "Modelo: " << modelo << endl;
-    cout << "Tipo de cristal: " << cristal << endl;
-    cout << "Precio: " << precio << endl;
-    cout << "Año: " << year << endl;
+    Reloj::imprimeCaracteristicas();
     cout << "Movimiento: " << movimiento << endl;
 }
 
@@ -103,11 +102,7 @@ int Cuarzo ::getFrecuencia() { return frecuenciaCuarzo; }
 void Cuarzo ::setFreciencia(int fc) { frecuenciaCuarzo = fc; }
 
 void Cuarzo ::imprimeCaracteristicas() {
-    cout << "Nombre: " << nombre << endl;
-    cout << "Modelo: " << modelo << endl;
-    cout << "Tipo de cristal: " << cristal << endl;
-    cout << "Precio: " << precio << endl;
-    cout << "Año: " << year << endl;
+    Reloj::imprimeCaracteristicas();
     cout << "Frecuencia del cuarzo: " << frecuenciaCuarzo << endl;
 }
 
@@ -130,10 +125,8 @@ string Digital ::getDisplay() { return display; }
 void Digital ::setDisplay(string di) { display = di; }
 
 void Digital ::imprimeCaracteristicas() {
-    cout << "Nombre: " << nombre << endl;
-    cout << "Modelo: " << modelo << endl;
-    cout << "Tipo de cristal: " << cristal << endl;
-    cout << "Precio: " << precio << endl;
-    cout << "Año: " << year << endl;
+    Reloj::imprimeCaracteristicas();
     cout << "Tipo de display: " << display << endl;
 }
+
+#endif
