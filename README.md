@@ -10,7 +10,7 @@ El programa puede llegar a fallar bajo diferentes condiciones, principalmente si
 ## Diagrama de clases
 ![](UMLW4tch.png)
 
-## Compilacion e instalacion
+## Compilación e instalación
 Para compilar el programa, instala los .h y el main.cpp, debido a que en main se incluyen todos los .h, solo es necesario compilar el main.
 
 ### Linux
