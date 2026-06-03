@@ -1,3 +1,12 @@
+/*
+ * W4tchCollector
+ * Héctor Enrique Gassan Sánchez
+ * A01709807
+ * 03/06/2026
+ * Esta clase define el objeto de tipo Reloj que contiene las clases heredadas
+ * Automatico, Cuarzo y Digital.
+ */
+
 #ifndef RELOJ_H_
 #define RELOJ_H_
 
@@ -5,7 +14,10 @@
 #include <string>
 using namespace std;
 
+//Declaracion de clase Reloj que es abstracta
 class Reloj {
+
+  //Declaro variables de instancia
 protected:
   string nombre;
   string modelo;
@@ -13,8 +25,9 @@ protected:
   int precio;
   int year;
 
+  //Declaro los métodos que va a tener el objeto
 public:
-  Reloj() : nombre(""), modelo(""), cristal(""), precio(0), year(0) {};
+  Reloj() : nombre(""), modelo(""), cristal(""), precio(0), year(0) {}; //constructor por defualt
   Reloj(string n, string m, string c, int p, int y)
       : nombre(n), modelo(m), cristal(c), precio(p), year(y) {};
 
@@ -29,7 +42,7 @@ public:
   void setCristal(string c);
   void setPrecio(int p);
   void setYear(int y);
-  virtual void imprimeCaracteristicas();
+  virtual void imprimeCaracteristicas() = 0; //método abstracto será sobreescrito
 };
 
 string Reloj ::getNombre() { return nombre; }
@@ -52,18 +65,14 @@ void Reloj ::setPrecio(int p) { precio = p; }
 
 void Reloj ::setYear(int y) { year = y; }
 
-void Reloj ::imprimeCaracteristicas() {
-  cout << "Nombre: " << nombre << endl;
-  cout << "Modelo: " << modelo << endl;
-  cout << "Tipo de cristal: " << cristal << endl;
-  cout << "Precio: " << precio << endl;
-  cout << "Año: " << year << endl;
-}
-
+//Declaro objeto Automatico que hereda de Reloj
 class Automatico : public Reloj {
+
+  //Variables de instancia del objeto
 private:
   string movimiento;
 
+  //Metodos del objeto
 public:
   Automatico() : Reloj(), movimiento("") {};
   Automatico(string n, string m, string c, int p, int y, string mo)
@@ -78,15 +87,31 @@ string Automatico ::getMovimiento() { return movimiento; }
 
 void Automatico ::setMovimiento(string m) { movimiento = m; }
 
+/**
+ * imprimeCaracteristicas 
+ *
+ * imprime todos los atributos en consola
+ *
+ * @param
+ * @return
+ */
 void Automatico ::imprimeCaracteristicas() {
-    Reloj::imprimeCaracteristicas();
-    cout << "Movimiento: " << movimiento << endl;
+      cout << "Nombre: " << nombre << endl;
+      cout << "Modelo: " << modelo << endl;
+      cout << "Tipo de cristal: " << cristal << endl;
+      cout << "Precio: " << precio << endl;
+      cout << "Año: " << year << endl;
+      cout << "Movimiento: " << movimiento << endl;
 }
 
+//Declaro objeto Cuarzo que hereda de Reloj
 class Cuarzo : public Reloj {
+
+  //Declaro las variables de instancia privadas
 private:
   int frecuenciaCuarzo;
 
+  //Declaro metodos públicos
 public:
   Cuarzo() : Reloj(), frecuenciaCuarzo(0) {};
   Cuarzo(string n, string m, string c, int p, int y, int fc)
@@ -101,15 +126,31 @@ int Cuarzo ::getFrecuencia() { return frecuenciaCuarzo; }
 
 void Cuarzo ::setFreciencia(int fc) { frecuenciaCuarzo = fc; }
 
+/**
+ * imprimeCaracteristicas 
+ *
+ * imprime todos los atributos en consola
+ *
+ * @param
+ * @return 
+ */
 void Cuarzo ::imprimeCaracteristicas() {
-    Reloj::imprimeCaracteristicas();
+    cout << "Nombre: " << nombre << endl;
+    cout << "Modelo: " << modelo << endl;
+    cout << "Tipo de cristal: " << cristal << endl;
+    cout << "Precio: " << precio << endl;
+    cout << "Año: " << year << endl;
     cout << "Frecuencia del cuarzo: " << frecuenciaCuarzo << endl;
 }
 
+//Declaro el objeto Digital que hereda de Reloj
 class Digital : public Reloj {
+
+  //Variables de instancia privadas del objeto
 private:
   string display;
 
+  //Metodos públicos del objeto
 public:
   Digital() : Reloj(), display("") {};
   Digital(string n, string m, string c, int p, int y, string di)
@@ -124,9 +165,21 @@ string Digital ::getDisplay() { return display; }
 
 void Digital ::setDisplay(string di) { display = di; }
 
+/**
+ * imprimeCaracteristicas
+ *
+ * imprime todos los atributos en consola
+ *
+ * @param
+ * @return 
+ */
 void Digital ::imprimeCaracteristicas() {
-    Reloj::imprimeCaracteristicas();
-    cout << "Tipo de display: " << display << endl;
+      cout << "Nombre: " << nombre << endl;
+      cout << "Modelo: " << modelo << endl;
+      cout << "Tipo de cristal: " << cristal << endl;
+      cout << "Precio: " << precio << endl;
+      cout << "Año: " << year << endl;
+      cout << "Tipo de display: " << display << endl;
 }
 
-#endif
+#endif // RELOJ_H_
