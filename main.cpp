@@ -21,7 +21,7 @@ void imprimir_menu(){
   cout << "1. Agregar Reloj Automatico" << endl;
   cout << "2. Agregar Reloj de Cuarzo" << endl;
   cout << "3. Agregar Reloj Digital" << endl;
-  cout << "5. Mostrar Coleccion" << endl;
+  cout << "4. Mostrar Coleccion" << endl;
   cout << "5. Valor de Coleccion" << endl;
   cout << "6. Mostrar Cantidad de Relojes" << endl;
   cout << "7. Caracteristicas" << endl;
