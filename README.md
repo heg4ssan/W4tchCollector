@@ -5,7 +5,7 @@ Este proyecto está hecho para todo aquel coleccionista y amante de los relojes.
 El programa solo corre en la consola y esta hecho con c++ standard por lo que corre en todos los sistemas operativos
 
 ## Casos de fallo
-El programa puede llegar a fallar bajo diferentes condiciones, principalmente si se ingresa un tipo de dato distinto al solicitado. De igual manera, el número de relojes está limitado a 100 en la clase colección, por lo que, si se sobrepasa este límite, el programa fallará.
+El programa puede llegar a fallar bajo diferentes condiciones, principalmente si se ingresa un tipo de dato distinto al solicitado. De igual manera, el número de relojes está limitado a 100 en la clase colección, por lo que, si se sobrepasa este límite, el programa fallará. También, si se selecciona la opción de características (ver las características de un reloj) sin antes haber agregado relojes a tu colección, el programa fallará.
 
 ## Diagrama de clases
 ![](UMLW4tch.png)
